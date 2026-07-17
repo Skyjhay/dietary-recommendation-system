@@ -1,0 +1,134 @@
+[
+  {
+    "user_id": 1,
+    "age": 28,
+    "weight": 70,
+    "height": 175,
+    "activity_level": "moderate",
+    "health_conditions": ["none"],
+    "preferences": ["balanced"],
+    "recommended_diet": "Balanced Diet",
+    "diet_description": "A balanced mix of proteins, carbohydrates, and fats. Includes lean meats, whole grains, fruits, and vegetables."
+  },
+  {
+    "user_id": 2,
+    "age": 45,
+    "weight": 85,
+    "height": 180,
+    "activity_level": "light",
+    "health_conditions": ["hypertension"],
+    "preferences": ["low_sodium"],
+    "recommended_diet": "Low Sodium Diet",
+    "diet_description": "Reduce sodium intake to control blood pressure. Focus on fresh foods, herbs for flavoring, and avoid processed foods."
+  },
+  {
+    "user_id": 3,
+    "age": 32,
+    "weight": 65,
+    "height": 165,
+    "activity_level": "vigorous",
+    "health_conditions": ["none"],
+    "preferences": ["high_protein"],
+    "recommended_diet": "High Protein Diet",
+    "diet_description": "Rich in protein for muscle building and recovery. Include chicken, fish, eggs, legumes, and dairy products."
+  },
+  {
+    "user_id": 4,
+    "age": 55,
+    "weight": 92,
+    "height": 178,
+    "activity_level": "sedentary",
+    "health_conditions": ["diabetes", "obesity"],
+    "preferences": ["low_carb"],
+    "recommended_diet": "Low Carb Diet",
+    "diet_description": "Minimize carbohydrate intake to manage blood sugar. Focus on proteins, healthy fats, and non-starchy vegetables."
+  },
+  {
+    "user_id": 5,
+    "age": 26,
+    "weight": 58,
+    "height": 162,
+    "activity_level": "moderate",
+    "health_conditions": ["none"],
+    "preferences": ["vegetarian"],
+    "recommended_diet": "Vegetarian Diet",
+    "diet_description": "Plant-based diet excluding meat. Include beans, lentils, tofu, nuts, seeds, and dairy products."
+  },
+  {
+    "user_id": 6,
+    "age": 35,
+    "weight": 72,
+    "height": 172,
+    "activity_level": "moderate",
+    "health_conditions": ["celiac"],
+    "preferences": ["gluten_free"],
+    "recommended_diet": "Gluten-Free Diet",
+    "diet_description": "Eliminate all gluten-containing foods. Use rice, potatoes, corn, and certified gluten-free products."
+  },
+  {
+    "user_id": 7,
+    "age": 40,
+    "weight": 78,
+    "height": 175,
+    "activity_level": "vigorous",
+    "health_conditions": ["none"],
+    "preferences": ["keto"],
+    "recommended_diet": "Ketogenic Diet",
+    "diet_description": "High fat, low carb diet. Focus on healthy fats, proteins, and minimal carbohydrates to enter ketosis."
+  },
+  {
+    "user_id": 8,
+    "age": 50,
+    "weight": 88,
+    "height": 182,
+    "activity_level": "light",
+    "health_conditions": ["heart_disease"],
+    "preferences": ["low_fat"],
+    "recommended_diet": "Low Fat Heart-Healthy Diet",
+    "diet_description": "Reduce saturated fats and cholesterol. Include whole grains, lean proteins, and plenty of fruits and vegetables."
+  },
+  {
+    "user_id": 9,
+    "age": 29,
+    "weight": 62,
+    "height": 168,
+    "activity_level": "moderate",
+    "health_conditions": ["none"],
+    "preferences": ["vegan"],
+    "recommended_diet": "Vegan Diet",
+    "diet_description": "Completely plant-based, no animal products. Focus on legumes, nuts, seeds, whole grains, fruits, and vegetables."
+  },
+  {
+    "user_id": 10,
+    "age": 38,
+    "weight": 75,
+    "height": 170,
+    "activity_level": "moderate",
+    "health_conditions": ["ibs"],
+    "preferences": ["low_fiber"],
+    "recommended_diet": "Low FODMAP Diet",
+    "diet_description": "Reduce foods high in fermentable carbohydrates. Suitable for IBS management. Include rice, chicken, carrots, and bananas."
+  },
+  {
+    "user_id": 11,
+    "age": 33,
+    "weight": 68,
+    "height": 176,
+    "activity_level": "vigorous",
+    "health_conditions": ["none"],
+    "preferences": ["high_protein"],
+    "recommended_diet": "Muscle Building Diet",
+    "diet_description": "High protein intake for muscle gain. Combine with resistance training. Include chicken, fish, eggs, and legumes."
+  },
+  {
+    "user_id": 12,
+    "age": 60,
+    "weight": 80,
+    "height": 172,
+    "activity_level": "light",
+    "health_conditions": ["gout"],
+    "preferences": ["low_purine"],
+    "recommended_diet": "Low Purine Diet",
+    "diet_description": "Limit purine-rich foods to reduce uric acid. Avoid red meat, organ meats, and certain seafood. Focus on vegetables and whole grains."
+  }
+]
