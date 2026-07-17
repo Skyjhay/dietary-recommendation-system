@@ -1,0 +1,405 @@
+/* ============================================
+   Healthy Dietary Recommendation System Styles
+   ============================================ */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* ============================================
+   Navigation Bar
+   ============================================ */
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, #0d6efd 0%, #0dcaf0 100%) !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* ============================================
+   Cards and Containers
+   ============================================ */
+
+.card {
+    border: none;
+    border-radius: 12px;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-title {
+    color: #0d6efd;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* ============================================
+   Form Styling
+   ============================================ */
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0d6efd;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #adb5bd;
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #0d6efd 0%, #0dcaf0 100%);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   Results Section
+   ============================================ */
+
+.metric-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: scale(1.05);
+}
+
+.metric-card h5 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ============================================
+   Recommendation Cards
+   ============================================ */
+
+.recommendation-item {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-left: 4px solid #0d6efd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendation-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-item h5 {
+    color: #0d6efd;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-item p {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.confidence-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #198754 0%, #20c997 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.diet-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0d6efd;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   Similar Users Section
+   ============================================ */
+
+.user-profile-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.user-profile-card:hover {
+    border-color: #0d6efd;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+.similarity-score {
+    display: inline-block;
+    background: linear-gradient(90deg, #ffc107 0%, #ff9800 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.profile-metric {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+    color: #555;
+}
+
+.profile-metric strong {
+    color: #0d6efd;
+}
+
+/* ============================================
+   Alert Styling
+   ============================================ */
+
+.alert {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-danger {
+    background: linear-gradient(90deg, #dc3545 0%, #c82333 100%);
+    color: white;
+}
+
+.alert-success {
+    background: linear-gradient(90deg, #198754 0%, #157347 100%);
+    color: white;
+}
+
+/* ============================================
+   Loading Spinner
+   ============================================ */
+
+.spinner-border {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+footer {
+    background: white;
+    border-top: 2px solid #e9ecef;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+    body {
+        background: #f8f9fa;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+    }
+
+    .metric-card {
+        margin-bottom: 1rem;
+    }
+
+    .metric-value {
+        font-size: 1.5rem;
+    }
+
+    .btn-lg {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .section-title {
+        font-size: 1rem;
+        margin-top: 0.75rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+
+    .metric-value {
+        font-size: 1.3rem;
+    }
+
+    .recommendation-item {
+        padding: 1rem;
+    }
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ============================================
+   Custom Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0d6efd;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0dcaf0;
+}
