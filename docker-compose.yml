@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  dietary-app:
+    build: .
+    container_name: dietary-recommendation-system
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+      - ./templates:/app/templates
+      - ./static:/app/static
+    environment:
+      - FLASK_ENV=production
+      - FLASK_APP=app.py
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
