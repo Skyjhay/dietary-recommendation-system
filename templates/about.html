@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Dietary Recommendation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">🥗 Dietary Recommendation System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="mb-4">About This System</h1>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">What is the Dietary Recommendation System?</h5>
+                        <p class="card-text">
+                            This system uses machine learning (specifically K-Nearest Neighbors algorithm) to provide personalized dietary recommendations based on your health profile. By analyzing your health metrics and comparing them with similar user profiles in our database, we can suggest the most suitable diet for your needs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">How Does It Work?</h5>
+                        <ol class="card-text">
+                            <li><strong>Input Your Information:</strong> You provide your age, weight, height, activity level, health conditions, and dietary preferences.</li>
+                            <li><strong>Feature Extraction:</strong> The system converts your information into numerical features (BMI, activity factor, health severity, etc.).</li>
+                            <li><strong>KNN Algorithm:</strong> We find the K-Nearest Neighbors (similar users) in our database using Euclidean distance in the feature space.</li>
+                            <li><strong>Recommendation:</strong> Based on the recommended diets of similar users, we suggest the most suitable diet options for you.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">What is the K-Nearest Neighbors Algorithm?</h5>
+                        <p class="card-text">
+                            K-Nearest Neighbors (KNN) is a simple yet powerful machine learning algorithm that:
+                        </p>
+                        <ul class="card-text">
+                            <li>Stores all training data and makes predictions based on similarity</li>
+                            <li>For a new user, finds the K closest users in the training data</li>
+                            <li>Uses the characteristics of those K similar users to make recommendations</li>
+                            <li>Is non-parametric and lazy learner (doesn't build an explicit model)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Key Features</h5>
+                        <ul class="card-text">
+                            <li>🎯 <strong>Personalized:</strong> Each recommendation is tailored to your unique health profile</li>
+                            <li>📊 <strong>Data-Driven:</strong> Based on real user profiles and dietary recommendations</li>
+                            <li>⚡ <strong>Real-Time:</strong> Get instant recommendations with detailed explanations</li>
+                            <li>🔐 <strong>Privacy-Focused:</strong> Your personal data is used only for the current session</li>
+                            <li>💡 <strong>Transparent:</strong> See the similar user profiles that influenced your recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Diet Types Supported</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="card-text">
+                                    <li>Balanced Diet</li>
+                                    <li>Low Sodium Diet</li>
+                                    <li>High Protein Diet</li>
+                                    <li>Low Carb Diet</li>
+                                    <li>Ketogenic Diet</li>
+                                    <li>Vegetarian Diet</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="card-text">
+                                    <li>Vegan Diet</li>
+                                    <li>Gluten-Free Diet</li>
+                                    <li>Heart-Healthy Diet</li>
+                                    <li>Low FODMAP Diet</li>
+                                    <li>Low Purine Diet</li>
+                                    <li>Muscle Building Diet</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Important Disclaimer</h5>
+                        <p class="card-text">
+                            ⚠️ <strong>This system is for informational purposes only and should not replace professional medical advice.</strong> Always consult with a qualified healthcare provider, registered dietitian, or nutritionist before making significant changes to your diet. The recommendations provided are based on machine learning analysis and should be considered as suggestions, not medical prescriptions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ready to Get Started?</h5>
+                        <p class="card-text">Return to the home page and fill in your health information to receive your personalized dietary recommendations.</p>
+                        <a href="/" class="btn btn-primary">Get Recommendations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-4 mt-5">
+        <div class="container">
+            <p class="text-muted">Healthy Dietary Recommendation System | Powered by KNN Algorithm</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
