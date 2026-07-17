@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dietary Recommendation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">🥗 Dietary Recommendation System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h1 class="card-title text-center mb-4">Get Your Personalized Dietary Recommendation</h1>
+                        <p class="text-center text-muted mb-4">Fill in your health information to receive AI-powered diet suggestions based on similar profiles</p>
+                        
+                        <form id="recommendationForm">
+                            <!-- Basic Health Metrics -->
+                            <div class="section-title">Basic Health Metrics</div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="age" class="form-label">Age *</label>
+                                    <input type="number" class="form-control" id="age" name="age" min="1" max="120" placeholder="e.g., 30" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="weight" class="form-label">Weight (kg) *</label>
+                                    <input type="number" class="form-control" id="weight" name="weight" min="10" max="500" step="0.1" placeholder="e.g., 70" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="height" class="form-label">Height (cm) *</label>
+                                    <input type="number" class="form-control" id="height" name="height" min="50" max="250" step="0.1" placeholder="e.g., 175" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="bmi_display" class="form-label">BMI</label>
+                                    <input type="text" class="form-control" id="bmi_display" disabled placeholder="Calculated automatically">
+                                </div>
+                            </div>
+
+                            <!-- Activity Level -->
+                            <div class="section-title">Activity Level</div>
+                            <div class="mb-3">
+                                <label for="activity_level" class="form-label">Activity Level *</label>
+                                <select class="form-select" id="activity_level" name="activity_level" required>
+                                    <option value="">Select activity level...</option>
+                                    <option value="sedentary">Sedentary (Little or no exercise)</option>
+                                    <option value="light">Light (1-3 days/week)</option>
+                                    <option value="moderate" selected>Moderate (3-5 days/week)</option>
+                                    <option value="vigorous">Vigorous (6-7 days/week)</option>
+                                </select>
+                            </div>
+
+                            <!-- Health Conditions -->
+                            <div class="section-title">Health Conditions</div>
+                            <div class="mb-3">
+                                <label for="health_conditions" class="form-label">Health Conditions</label>
+                                <select class="form-select" id="health_conditions" name="health_conditions" multiple>
+                                    <option value="none" selected>None</option>
+                                    <option value="diabetes">Diabetes</option>
+                                    <option value="hypertension">Hypertension</option>
+                                    <option value="heart_disease">Heart Disease</option>
+                                    <option value="obesity">Obesity</option>
+                                    <option value="anemia">Anemia</option>
+                                    <option value="thyroid">Thyroid Disorder</option>
+                                    <option value="celiac">Celiac Disease</option>
+                                    <option value="ibs">IBS (Irritable Bowel Syndrome)</option>
+                                    <option value="gout">Gout</option>
+                                </select>
+                                <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple conditions</small>
+                            </div>
+
+                            <!-- Dietary Preferences -->
+                            <div class="section-title">Dietary Preferences</div>
+                            <div class="mb-4">
+                                <label for="preferences" class="form-label">Dietary Preferences</label>
+                                <select class="form-select" id="preferences" name="preferences" multiple>
+                                    <option value="none" selected>None</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="keto">Ketogenic</option>
+                                    <option value="low_carb">Low Carb</option>
+                                    <option value="high_protein">High Protein</option>
+                                    <option value="gluten_free">Gluten-Free</option>
+                                    <option value="dairy_free">Dairy-Free</option>
+                                    <option value="low_sodium">Low Sodium</option>
+                                </select>
+                                <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple preferences</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <span id="submitText">Get Recommendations</span>
+                                <span id="spinner" class="spinner-border spinner-border-sm ms-2" style="display: none;" role="status" aria-hidden="true"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="container my-5" id="resultsContainer" style="display: none;">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4">Your Recommendations</h2>
+                        
+                        <!-- User Metrics -->
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <div class="metric-card">
+                                    <h5>Your BMI</h5>
+                                    <p class="metric-value" id="result_bmi">--</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="metric-card">
+                                    <h5>Daily Calorie Needs</h5>
+                                    <p class="metric-value" id="result_tdee">--</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="metric-card">
+                                    <h5>Similar Profiles Found</h5>
+                                    <p class="metric-value" id="result_similar">--</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recommended Diets -->
+                        <h4 class="mb-3">Recommended Diets</h4>
+                        <div id="recommendationsContainer">
+                            <!-- Results will be inserted here -->
+                        </div>
+
+                        <!-- Similar Users -->
+                        <h4 class="mt-4 mb-3">Similar User Profiles</h4>
+                        <div id="similarUsersContainer">
+                            <!-- Similar users will be inserted here -->
+                        </div>
+
+                        <button class="btn btn-secondary mt-4" onclick="location.reload()">New Recommendation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Alert -->
+    <div class="container" id="errorContainer" style="display: none;">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> <span id="errorMessage"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-4 mt-5">
+        <div class="container">
+            <p class="text-muted">Healthy Dietary Recommendation System | Powered by KNN Algorithm</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
